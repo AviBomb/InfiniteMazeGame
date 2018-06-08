@@ -83,9 +83,7 @@ function circle(radius, color, x, y) {
         return crash;
     }
 }
-
-myScore = new component("30px", "Consolas", "lime", 280, 40, "text");
-
+    
 function component(width, height, color, x, y, type) {
     this.type = type;
     this.color = color;
@@ -109,21 +107,6 @@ function component(width, height, color, x, y, type) {
     this.newPos = function() {
         this.x += this.speedX;
         this.y += this.speedY;
-    }
-    this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
     }
 }
 
